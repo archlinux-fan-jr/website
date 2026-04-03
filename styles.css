@@ -1,45 +1,81 @@
-/* Reset some default styles */
+/* Nordic color palette */
+:root {
+  --bg: #2e3440;
+  --bg-light: #3b4252;
+  --text: #d8dee9;
+  --accent: #88c0d0;
+  --accent2: #81a1c1;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
 /* Header */
 header {
-    background: #222;
-    color: #fff;
-    padding: 2rem;
-    text-align: center;
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-light);
+  border-bottom: 2px solid var(--accent);
 }
 
-/* Main content */
+header h1 {
+  color: var(--accent);
+  font-size: 2.5rem;
+}
+
+/* Main layout */
 main {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
 }
 
-section {
-    margin-bottom: 2rem;
+/* Cards */
+.card {
+  background: var(--bg-light);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border: 1px solid var(--accent);
 }
 
 h2 {
-    margin-bottom: 0.5rem;
+  color: var(--accent2);
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  margin-left: 1rem;
+}
+
+/* Image */
+img {
+  margin-top: 1rem;
+  width: 200px;
+  border-radius: 10px;
+  border: 2px solid var(--accent);
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background: #222;
-    color: #fff;
-    margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-light);
+  border-top: 2px solid var(--accent);
+  margin-top: 2rem;
 }
