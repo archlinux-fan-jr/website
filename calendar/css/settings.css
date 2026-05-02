@@ -1,0 +1,63 @@
+/* Settings */
+.settings {
+  background: #eee;
+  border: 1px solid #444;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+.settings > div {
+  display: none;
+}
+.settings:hover > div {
+  display: block;
+}
+h3 {
+  margin: 0;
+}
+.monthly-names { float: right; }
+.monthly-names a {
+  background-color: #4285F4;
+  border-radius: 5px;
+  color: #FFF;
+  display: block;
+  margin: 0 25px 11px;
+  padding: 3px 6px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+input { border-radius: 4px;
+  display: inline-block;
+  margin: 0 auto 10px;
+  padding: 3px 10px;
+}
+label {
+  display: inline-block;
+  width: 254px;
+}
+select {
+  border-radius: 4px;
+  margin: 0 0 10px;
+  padding: 3px 3px 3px 10px;
+}
+.start-day {
+  float: right;
+}
+.generate {
+  clear: right;
+  display: inline-block;
+  float: right;
+  text-align: center;
+}
+.generate a {
+  background-color: #4285F4;
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  margin: 0 25px 11px;
+  padding: 3px 6px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}

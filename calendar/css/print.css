@@ -1,0 +1,10 @@
+.calendar {
+	margin-bottom: 0;
+  page-break-after: always;
+}
+
+/* Settings */
+.settings,
+.generate {
+  display: none;
+}

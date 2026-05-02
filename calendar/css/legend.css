@@ -1,0 +1,99 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  color: #222;
+  font-family: helvetica;
+  margin: 0;
+}
+
+.content {
+  margin: 40px auto 0;
+  width: 942px;
+}
+h1 {
+  font-size: 40px;
+  font-weight: normal;
+  margin: 0 0 40px;
+  text-align: center;
+}
+#legends {
+  margin: 0;
+  padding: 0;
+}
+#legends li {
+  list-style: none;
+  margin-top: 40px;
+}
+#legends li:first-child { margin-top: 0; }
+#legends li strong {
+  border: 1px solid #222;
+  border-radius: 3px;
+  display: inline-block;
+  height: 126px;
+  margin: 0 40px 0 0;
+  text-indent: -999em;
+  vertical-align: top;
+  width: 130px;
+}
+#legends li span {
+  font-size: 40px;
+  line-height: 120px;
+}
+#legends li input {
+  background: none;
+  border: 0;
+  font-size: 40px;
+  line-height: 120px;
+}
+#legends li a {
+  color: #222;
+  float: right;
+  font-size: 40px;
+  line-height: 120px;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+/* Settings */
+.settings {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  z-index: 1;
+}
+.settings input { border-radius: 4px;
+  display: inline-block;
+  margin: 0 auto 10px;
+  padding: 3px 10px;
+}
+.settings a {
+  background-color: #4285F4;
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  margin: 0 0 40px;
+  padding: 3px 6px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+@media print {
+  .content { margin: 20px 0 0 20px; }
+  .settings { display: none; }
+  #legends li a { display: none; }
+}

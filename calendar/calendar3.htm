@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calendar</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <link rel="stylesheet" href="css/layout/horizontal.css">
+  </head>
+
+  <body>
+    <div class="settings">settings
+      <div class="monthly-names">
+        <h3>Rename months</h3>
+        <input id="mon1" onkeyup="saveLabelsToLocalstorage()" type="text" value="Januar" /><br />
+        <input id="mon2" onkeyup="saveLabelsToLocalstorage()" type="text" value="Februar" /><br />
+        <input id="mon3" onkeyup="saveLabelsToLocalstorage()" type="text" value="Marec" /><br />
+        <input id="mon4" onkeyup="saveLabelsToLocalstorage()" type="text" value="April" /><br />
+        <input id="mon5" onkeyup="saveLabelsToLocalstorage()" type="text" value="Maj" /><br />
+        <input id="mon6" onkeyup="saveLabelsToLocalstorage()" type="text" value="Junij" /><br />
+        <input id="mon7" onkeyup="saveLabelsToLocalstorage()" type="text" value="Julij" /><br />
+        <input id="mon8" onkeyup="saveLabelsToLocalstorage()" type="text" value="Avgust" /><br />
+        <input id="mon9" onkeyup="saveLabelsToLocalstorage()" type="text" value="September" /><br />
+        <input id="mon10" onkeyup="saveLabelsToLocalstorage()" type="text" value="Oktober" /><br />
+        <input id="mon11" onkeyup="saveLabelsToLocalstorage()" type="text" value="November" /><br />
+        <input id="mon12" onkeyup="saveLabelsToLocalstorage()" type="text" value="December" /><br />
+        <a href="javascript:void(0)" onclick="clearLocalstorage()">Reset Months</a>
+      </div>
+      <div class="start-day">
+        <label for="weekStartDay">Select your week start day</label>
+        <select id="weekStartDay" onchange="setStartDay()">
+          <option selected="selected" value="0">Monday</option>
+          <option value="1">Tusday</option>
+          <option value="2">Wednesday</option>
+          <option value="3">Thursday</option>
+          <option value="4">Friday</option>
+          <option value="5">Saturday</option>
+          <option value="6">Sunday</option>
+        </select>
+        <br />
+        <label for="changeColor">Change text color</label><input id="changeColor" onkeyup="changeColor()" size="9" type="text" value="#222" /><br />
+        <label for="changeBackgroundColor">Change background color</label><input id="changeBackgroundColor" onkeyup="changeBackgroundColor()" size="9" type="text" value="#FFF" /><br />
+        <label for="changeBorderColor">Change border color</label><input id="changeBorderColor" onkeyup="changeBorderColor()" size="9" type="text" value="#222" /><br />
+        <label for="changeBackgroundImage">Change background image color</label><input id="changeBackgroundImage" onkeyup="changeBackgroundImage()" size="9" type="text" value="" title="add url of the image" />
+
+        <select id="changeLayout" onchange="changeLayout()">
+          <option selected="selected" value="horizontal.css">horizontal.css</option>
+          <option value="vertical.css">vertical.css</option>
+          <option value="12months.css">12months.css</option>
+        </select>
+      </div>
+    </div>
+    <div class="generate">
+      <h3>Generate your calendar</h3>
+      <input id="selectMonths" maxlength="2" size="2" type="text" value="1" />
+      <a href="javascript:void(0)" onclick="generateCals()">Generate</a>
+    </div>
+
+    <div id="calendar">Calendar should be here. If you don't see it you probably have Javascript disabled</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+

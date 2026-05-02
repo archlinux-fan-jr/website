@@ -1,0 +1,8 @@
+/* Calendar  */
+#calendar {
+  width: 669px;
+}
+.calendar ul li {
+  height: 185px;
+  width: 87px;
+}

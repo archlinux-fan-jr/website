@@ -1,0 +1,70 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  color: #222;
+  font-family: helvetica;
+  margin: 0;
+}
+/* Calendar  */
+#calendar {
+  width: 970px;
+}
+.calendar {
+  height: 670px;
+  margin: 0 auto 120px;
+  padding: 0;
+  position: relative;
+  vertical-align: top;
+}
+.calendar li { list-style: none; }
+.calendar ul {
+  padding: 0;
+}
+.calendar ul li {
+  display: inline-block;
+  height: 120px;
+  margin-top: 10px;
+  margin-left: 10px;
+  list-style: none;
+  position: relative;
+  width: 126px;
+  vertical-align: top;
+}
+.calendar li:first-child li { margin-top: 0; }
+.calendar ul li:first-child { margin-left: 0; }
+.calendar ul li span {
+  border: 1px solid #999;
+  border-radius: 3px;
+  color: #999;
+  display: block;
+  height: 100%;
+  font-size: 20px;
+  padding: 7px 10px;
+  width: 100%;
+}
+.calendar ul li.saturday span,
+.calendar ul li.sunday span {
+  /* background: red; */
+  border: 1px solid #222;
+  font-weight: bold;
+  color: #222;
+}
+.calendar h3 {
+  font-size: 40px;
+  font-weight: normal;
+  left: -2px;
+  margin: 0;
+  position: absolute;
+  top: -7px;
+  width: 262px;
+}
+.calendar ul li:nth-child(7) h3 {
+  bottom: -10px;
+  left: auto;
+  right: -2px;
+  text-align: right;
+  top: auto
+}

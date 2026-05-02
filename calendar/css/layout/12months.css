@@ -1,0 +1,40 @@
+/* Calendar  */
+#calendar {
+  width: 669px;
+}
+.calendar {
+  border: 1px solid #222;
+  border-radius: 3px;
+  display: inline-block;
+  height: 161px;
+  margin: 10px 10px 0 0;
+  padding: 10px;
+  width: 216px;
+}
+.calendar:nth-child(3n) {
+  margin-right: 0;
+}
+.calendar ul li {
+  height: 19px;
+  width: 19px;
+}
+.calendar ul li span {
+  font-size: 14px;
+  padding: 11px 5px;
+  word-wrap:break-word;
+}
+.calendar h3 {
+  font-size: 14px;
+  left: -1px;
+  top: -4px;
+}
+.calendar ul li:nth-child(7) h3 {
+  bottom: -5px;
+  right: 0;
+}
+
+@media print {
+  .calendar {
+    page-break-after: initial;
+  }
+}
