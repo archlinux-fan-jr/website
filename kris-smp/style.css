@@ -1,0 +1,80 @@
+:root{--bg:#00132a;--surface:#0a2240;--line:#17385c;--accent:#3da5ff;--accent-dark:#006fba;--cream:#eaf4ff;--muted:#9db6d1;--sky:#8fd0ff;--cyan:#5ce1ff;--mint:#6fe3c1;--radius:18px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font:17px/1.6 "Nunito",system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+h1,h2,h3,.logo{font-family:"Lilita One","Trebuchet MS",sans-serif;font-weight:400;line-height:1.1;letter-spacing:.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.wrap{width:min(1040px,100% - 40px);margin-inline:auto}
+main{flex:1}
+
+/* nav */
+header{border-bottom:2px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 0}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.7rem;color:var(--accent);text-decoration:none;text-shadow:0 3px 0 var(--accent-dark)}
+.logo img{height:30px;width:auto}
+.nav ul{display:flex;gap:6px;list-style:none;padding:0}
+.nav a.link{display:block;padding:8px 18px;border-radius:999px;color:var(--muted);font-weight:800;text-decoration:none}
+.nav a.link:hover{color:var(--cream)}
+.nav a[aria-current]{background:var(--accent);color:var(--bg)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:72px 0 56px}
+.hero h1{font-size:clamp(3.2rem,9vw,6rem);color:var(--accent);text-shadow:0 6px 0 var(--accent-dark)}
+.lead{font-size:1.25rem;color:var(--muted);max-width:34ch;margin:22px 0 30px}
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-logo{height:auto;justify-self:center;width:min(340px,75vw);border-radius:28px;box-shadow:0 0 0 3px var(--accent-dark),0 18px 0 rgba(0,0,0,.35);animation:roll .9s cubic-bezier(.2,.8,.3,1) both}
+@keyframes roll{from{transform:translateX(80px) scale(.85);opacity:0}to{transform:none;opacity:1}}
+
+/* buttons */
+.btn{display:inline-block;padding:13px 28px;border:2px solid var(--accent);border-radius:999px;background:var(--accent);color:var(--bg);font:800 1rem "Nunito",sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 4px 0 var(--accent-dark);transition:transform .1s,box-shadow .1s}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--accent-dark)}
+.btn.ghost{background:transparent;color:var(--accent);box-shadow:none}
+.btn.ghost:hover{transform:none;background:var(--surface)}
+.btn.small{padding:7px 18px;font-size:.9rem;box-shadow:none}
+
+/* sections */
+.section{padding:44px 0}
+.section h2{font-size:2.1rem;margin-bottom:22px}
+.page-title{padding:56px 0 8px}
+.page-title h1{font-size:clamp(2.6rem,7vw,4rem);color:var(--accent);text-shadow:0 5px 0 var(--accent-dark)}
+.page-title p{color:var(--muted);margin-top:14px;max-width:52ch}
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.status div{padding:18px 22px;background:var(--surface);border:2px solid var(--line);border-radius:var(--radius)}
+.status span{display:block;color:var(--muted);font-weight:700;font-size:.95rem}
+.status b{font-size:1.3rem}
+.status .off b{color:var(--muted);font-style:italic}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px}
+.features div{border-left:5px solid var(--sky);padding-left:18px}
+.features div:nth-child(2){border-color:var(--cyan)}
+.features div:nth-child(3){border-color:var(--accent)}
+.features h3{font-size:1.4rem;margin-bottom:6px}
+.features p{color:var(--muted)}
+
+/* join */
+.servers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.server{padding:28px;background:var(--surface);border:2px solid var(--line);border-radius:var(--radius)}
+.server h2{font-size:1.7rem;margin-bottom:10px}
+.badge{display:inline-block;padding:2px 14px;border-radius:999px;font-size:.85rem;font-weight:800;margin-bottom:12px}
+.badge.on{background:var(--mint);color:var(--bg)}
+.badge.off{background:var(--line);color:var(--muted)}
+.field{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding:12px 16px;background:var(--bg);border:2px dashed var(--line);border-radius:12px}
+.field small{display:block;color:var(--muted);font-weight:700}
+.field b{font:700 1.15rem ui-monospace,Consolas,monospace;word-break:break-all}
+.field.off b{font:italic 700 1rem "Nunito",sans-serif;color:var(--muted)}
+.steps{padding-left:1.4em}
+.steps li{margin-bottom:8px;color:var(--muted)}
+.steps li::marker{color:var(--accent);font-weight:800}
+
+/* rules */
+.rules{list-style:none;padding:0;counter-reset:r;display:grid;gap:14px}
+.rules li{counter-increment:r;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;padding:18px 22px;background:var(--surface);border:2px solid var(--line);border-radius:var(--radius)}
+.rules li::before{content:counter(r);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--bg);font:1.3rem "Lilita One",sans-serif}
+.rules h3{font-size:1.3rem;margin-bottom:2px}
+.rules p{color:var(--muted)}
+.note{margin-top:28px;padding:18px 22px;border-left:5px solid var(--sky);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0}
+
+footer{border-top:2px solid var(--line);padding:22px 0;color:var(--muted);font-size:.9rem}
+
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:44px}.hero-logo{order:-1}}
+@media(prefers-reduced-motion:reduce){.hero-logo{animation:none}.btn{transition:none}html{scroll-behavior:auto}}
