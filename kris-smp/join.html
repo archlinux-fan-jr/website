@@ -35,15 +35,21 @@
         <h2>Java Edition</h2>
         <div class="field">
           <div><small>Server IP</small><b id="java-ip">fried-wishlist.tun.ply.gg</b></div>
-          <button class="btn small" id="copy" type="button">Copy IP</button>
+          <button class="btn small" type="button" data-copy="java-ip">Copy IP</button>
         </div>
       </div>
 
       <div class="server">
-        <span class="badge off">Unavailable</span>
+        <span class="badge on">Online</span>
         <h2>Bedrock Edition</h2>
-        <div class="field off"><div><small>Server IP</small><b>Currently unavailable</b></div></div>
-        <div class="field off"><div><small>Port</small><b>Currently unavailable</b></div></div>
+        <div class="field">
+          <div><small>Server IP</small><b id="bedrock-ip">ambulance-welcomes.tun.ply.gg</b></div>
+          <button class="btn small" type="button" data-copy="bedrock-ip">Copy IP</button>
+        </div>
+        <div class="field">
+          <div><small>Port</small><b id="bedrock-port">56080</b></div>
+          <button class="btn small" type="button" data-copy="bedrock-port">Copy port</button>
+        </div>
       </div>
     </div>
   </section>
@@ -57,6 +63,16 @@
       <li>Click Done, select the server, and press Join Server.</li>
     </ol>
   </section>
+
+  <section class="wrap section">
+    <h2>How to connect on Bedrock</h2>
+    <ol class="steps">
+      <li>Open Minecraft Bedrock Edition, click Play, then open the Servers tab.</li>
+      <li>Scroll down and click Add Server, then enter any name, like Kris SMP.</li>
+      <li>Enter the server IP and set the port to 56080.</li>
+      <li>Click Save, select the server, and join.</li>
+    </ol>
+  </section>
 </main>
 
 <footer>
@@ -64,12 +80,15 @@
 </footer>
 
 <script>
-document.getElementById('copy').addEventListener('click', function () {
-  var btn = this, ip = document.getElementById('java-ip').textContent;
-  function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = 'Copy IP'; }, 1800); }
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(ip).then(function () { done('Copied!'); }, function () { done('Copy failed'); });
-  } else { done('Copy failed'); }
+document.querySelectorAll('[data-copy]').forEach(function (btn) {
+  var label = btn.textContent;
+  function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = label; }, 1800); }
+  btn.addEventListener('click', function () {
+    var text = document.getElementById(btn.dataset.copy).textContent;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function () { done('Copied!'); }, function () { done('Copy failed'); });
+    } else { done('Copy failed'); }
+  });
 });
 </script>
 </body>
