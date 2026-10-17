@@ -52,19 +52,30 @@ header{border-bottom:2px solid var(--line)}
 .features p{color:var(--muted)}
 
 /* join */
-.servers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.server{padding:28px;background:var(--surface);border:2px solid var(--line);border-radius:var(--radius)}
+.servers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:20px}
+.server{padding:24px;background:var(--surface);border:2px solid var(--line);border-radius:var(--radius)}
 .server h2{font-size:1.7rem;margin-bottom:10px}
 .badge{display:inline-block;padding:2px 14px;border-radius:999px;font-size:.85rem;font-weight:800;margin-bottom:12px}
 .badge.on{background:var(--mint);color:var(--bg)}
 .badge.off{background:var(--line);color:var(--muted)}
-.field{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding:12px 16px;background:var(--bg);border:2px dashed var(--line);border-radius:12px}
+.field{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding:12px 16px;background:var(--bg);border:2px dashed var(--line);border-radius:12px}
 .field small{display:block;color:var(--muted);font-weight:700}
-.field b{font:700 1.15rem ui-monospace,Consolas,monospace;word-break:break-all}
+.field b{font-family:ui-monospace,Consolas,monospace;font-weight:700;white-space:nowrap;font-size:clamp(.72rem,3.4vw,1rem)}
 .field.off b{font:italic 700 1rem "Nunito",sans-serif;color:var(--muted)}
 .steps{padding-left:1.4em}
 .steps li{margin-bottom:8px;color:var(--muted)}
 .steps li::marker{color:var(--accent);font-weight:800}
+
+/* trade guide */
+.table-wrap{overflow-x:auto;border:2px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.cmds{width:100%;border-collapse:collapse}
+.cmds th,.cmds td{padding:14px 20px;text-align:left;vertical-align:top}
+.cmds th{color:var(--muted);font-size:.9rem}
+.cmds tr+tr td,.cmds td{border-top:2px solid var(--line)}
+code{font:700 .95em ui-monospace,Consolas,monospace;color:var(--accent);background:var(--surface);padding:2px 8px;border-radius:8px}
+.cmds code{font-size:1rem;background:none;padding:0;white-space:nowrap}
+.cmds td:last-child{color:var(--muted)}
+.features a{color:var(--accent);font-weight:800}
 
 /* rules */
 .rules{list-style:none;padding:0;counter-reset:r;display:grid;gap:14px}
@@ -76,5 +87,6 @@ header{border-bottom:2px solid var(--line)}
 
 footer{border-top:2px solid var(--line);padding:22px 0;color:var(--muted);font-size:.9rem}
 
+@media(max-width:480px){.server{padding:18px}.field{padding:10px 12px}}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:44px}.hero-logo{order:-1}}
 @media(prefers-reduced-motion:reduce){.hero-logo{animation:none}.btn{transition:none}html{scroll-behavior:auto}}
